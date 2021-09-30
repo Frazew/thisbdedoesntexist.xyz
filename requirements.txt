@@ -1,0 +1,7 @@
+gensim
+numpy
+nltk
+flask
+bs4
+requests
+pillow

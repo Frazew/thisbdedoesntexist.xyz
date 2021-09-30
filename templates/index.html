@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html class="h-100" lang="en">
+	<head>
+	    <title>This BDE doesn't exist</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <style>
+	    	body {
+	    		background-color: #a30800;
+				flex-direction: column;
+				height: 100vh;
+				padding: 0;
+				margin: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+	    	}
+	        h1, h2, h3, small {
+	            font-family: "Overpass", sans-serif !important;
+	            font-weight: 900;
+	            color: {{ bde['stroke'] }};
+	            margin-bottom: 0px;
+	            font-variant: small-caps;
+	            text-align: center;
+	        }
+	        .bottom {
+	        	position: fixed;
+				bottom: 10px;
+				font-variant: initial;
+	        }
+	        a {
+	        	color: {{ bde['stroke'] }} !important;
+	        }
+		</style>
+		<link rel="stylesheet" href="https://overpass-30e2.kxcdn.com/overpass.css">
+	</head>
+	<body style="background-color: {{ bde['color_hex'] }}">
+		<img style="width: 100%" src="data:image/png;base64,{{ bde['logo'] }}">
+		<h1>{{ bde["name"] }} liste {{ bde["color"] }} 2022</h1>
+		<img style="width: 64px; filter: brightness({{ 0 if bde['stroke'] == "#000000" else 1 }});" src="{{ url_for('static', filename='animals/' + bde['animal'] + '.png') }}">
+		<small>{{ bde["animal_french"] }}</small>
+		<small class="bottom">bjr c'est bricolé avec du Flask et du word2vec, sur mon <a href="//github.com/Frazew">Github</a> un jour peut-être. bisous, frazou.</small>
+	</body>
+</html>

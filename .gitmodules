@@ -1,0 +1,3 @@
+[submodule "anonymous-animals"]
+	path = anonymous-animals
+	url = https://github.com/wayou/anonymous-animals/
